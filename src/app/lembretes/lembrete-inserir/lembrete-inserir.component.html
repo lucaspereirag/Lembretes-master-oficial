@@ -10,12 +10,12 @@
         matInput
         required
         type="text"
-        placeholder="Título do lembrete."
+        placeholder="Título"
         formControlName="titulo"
         name="titulo"
       />
       <mat-error *ngIf="form.get('titulo').invalid"
-        >Digite um título ao lembrete a ser cadastrado</mat-error
+        >Digite um título válido</mat-error
       >
     </mat-form-field>
 
@@ -23,7 +23,7 @@
       <input
         matInput
         type="text"
-        placeholder="Descrição do lembrete."
+        placeholder="Descrição"
         formControlName="descricao"
         name="descricao"
       />
@@ -34,31 +34,33 @@
         matInput
         required
         type="text"
-        placeholder="Data de realização do lembrete."
-        formControlName="datareal"
-        name="datareal"
+        placeholder="Data de cadastro"
+        formControlName="datacad"
+        name="datacad"
       />
-      <mat-error *ngIf="form.get('datareal').invalid"
-        >Digite uma data prevista à realização do lembrete</mat-error
+      <mat-error *ngIf="form.get('datacad').invalid"
+        >Digite a data válida de cadastro </mat-error
       >
-    </mat-form-field>
 
+    </mat-form-field>
     <mat-form-field>
       <input
         matInput
         required
         type="text"
-        placeholder="Data de cadastro do lembrete. "
-        formControlName="datacad"
-        name="datacad"
+        placeholder="Data de acontecimento"
+        formControlName="datareal"
+        name="datareal"
       />
-      <mat-error *ngIf="form.get('datacad').invalid"
-        >Digite a data de cadastro do lembrete</mat-error
+      <mat-error *ngIf="form.get('datareal').invalid"
+        >Digite uma data válida de acontecimento</mat-error
       >
     </mat-form-field>
 
-    <button style="margin-top: 1rem" color="accent" mat-raised-button>
-      Salvar Lembrete
+    
+
+    <button style="margin-top: 1rem" color="warn" mat-raised-button>
+      Salvar Dados
     </button>
   </form>
 </mat-card>
