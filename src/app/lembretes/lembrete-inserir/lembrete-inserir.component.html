@@ -1,0 +1,64 @@
+<mat-card>
+  <mat-spinner *ngIf="estaCarregando"></mat-spinner>
+  <form
+    [formGroup]="form"
+    (submit)="onSalvarLembrete(lembreteForm)"
+    *ngIf="!estaCarregando"
+  >
+    <mat-form-field>
+      <input
+        matInput
+        required
+        type="text"
+        placeholder="Título do lembrete."
+        formControlName="titulo"
+        name="titulo"
+      />
+      <mat-error *ngIf="form.get('titulo').invalid"
+        >Digite um título ao lembrete a ser cadastrado</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        placeholder="Descrição do lembrete."
+        formControlName="descricao"
+        name="descricao"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        required
+        type="text"
+        placeholder="Data de realização do lembrete."
+        formControlName="datareal"
+        name="datareal"
+      />
+      <mat-error *ngIf="form.get('datareal').invalid"
+        >Digite uma data prevista à realização do lembrete</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        required
+        type="text"
+        placeholder="Data de cadastro do lembrete. "
+        formControlName="datacad"
+        name="datacad"
+      />
+      <mat-error *ngIf="form.get('datacad').invalid"
+        >Digite a data de cadastro do lembrete</mat-error
+      >
+    </mat-form-field>
+
+    <button style="margin-top: 1rem" color="accent" mat-raised-button>
+      Salvar Lembrete
+    </button>
+  </form>
+</mat-card>

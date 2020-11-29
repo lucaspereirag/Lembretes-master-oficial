@@ -1,0 +1,32 @@
+<mat-spinner *ngIf="estaCarregando"></mat-spinner>
+<mat-accordion *ngIf="lembretes.length > 0 && !estaCarregando">
+  <mat-expansion-panel *ngFor="let lembrete of lembretes">
+    <mat-expansion-panel-header
+      >Título: {{ lembrete.titulo }}</mat-expansion-panel-header
+    >
+    <hr />
+    <p>Descrição do lembrete: {{ lembrete.descricao }}</p>
+    <hr />
+    <p>Data de realização: {{ lembrete.datareal }}</p>
+    <hr />
+    <p>Data de cadastro: {{ lembrete.datacad }}</p>
+    <mat-action-row>
+      <button
+        mat-button color="primary"
+        [routerLink]="['/editar', lembrete.id]"
+      >
+        Modificar lembrete
+      </button>
+      <button mat-button color="warn" (click)="onDelete(lembrete.id)">
+        Excluir lembrete
+      </button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<p
+  class="mat-body-3"
+  style="text-align: center"
+  *ngIf="lembretes.length <= 0 && !estaCarregando"
+>
+  Nenhum lembrete salvo!
+</p>
