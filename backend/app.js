@@ -6,7 +6,7 @@ const mongoose = require ('mongoose');
 
 
 
-mongoose.connect('mongodb+srv://admin:admin123@projetoa3.kqi2z.mongodb.net/Lembretes?retryWrites=true&w=majority')
+// mongoose.connect('mongodb+srv://admin:admin123@projetoa3.kqi2z.mongodb.net/Lembretes?retryWrites=true&w=majority')
 .then(()=>{
     console.log('Conexão OK')
 }).catch(()=>{
